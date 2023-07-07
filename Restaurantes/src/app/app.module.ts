@@ -14,6 +14,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RestauranteModule } from './restaurante/restaurante.module';
 import { HttpClientModule } from '@angular/common/http';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MensagemService} from './shared/services/mensagem.service';
+import {MensagemSweetService} from './shared/services/mensagem-sweet.service';
+import {IMensagem} from './shared/module/IMensagem';
+
 
 @NgModule({
   declarations: [
@@ -32,9 +37,15 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     HttpClientModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatSnackBarModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: IMensagem,
+      useClass: MensagemService
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

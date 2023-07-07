@@ -5,7 +5,7 @@
         <mat-card-header>
           <mat-card-title>{{restaurante.nome}}</mat-card-title>
           <mat-card-subtitle *ngIf="restaurante.nota > 0">Nota: {{restaurante.nota}} estrelas</mat-card-subtitle>
-          <mat-card-subtitle>Endereço: {{restaurante.endereco}}</mat-card-subtitle>
+          <mat-card-subtitle *ngIf="restaurante.endereco" >Endereço: {{restaurante.endereco}}</mat-card-subtitle>
         </mat-card-header><br>
         <mat-card-content>
           {{restaurante.descricao}}
@@ -20,25 +20,5 @@
         </mat-card-actions>
       </mat-card>
     </mat-grid-tile>
-</mat-grid-list>
-
-
-  <mat-card fxFlex="20" class="card-restaurante" *ngFor="let restaurante of restaurantes">
-    <mat-card-header>
-      <mat-card-title>{{restaurante.nome}}</mat-card-title>
-      <mat-card-subtitle *ngIf="restaurante.nota > 0">Nota: {{restaurante.nota}} estrelas</mat-card-subtitle>
-      <mat-card-subtitle>Endereço: {{restaurante.endereco}}</mat-card-subtitle>
-    </mat-card-header><br>
-    <mat-card-content>
-      {{restaurante.descricao}}
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="editar(restaurante)">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <button mat-button (click)="excluir(restaurante)">
-        <mat-icon>delete</mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card>
+  </mat-grid-list>
 </div>

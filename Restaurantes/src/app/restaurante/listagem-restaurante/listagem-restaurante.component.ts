@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Restaurante } from 'src/app/shared/module/restaurante';
 import { RestauranteService } from "../../shared/services/restaurante.service"
+import {IMensagem} from '../../shared/module/IMensagem';
 
 @Component({
   selector: 'app-listagem-restaurante',
@@ -11,7 +12,7 @@ import { RestauranteService } from "../../shared/services/restaurante.service"
 export class ListagemRestauranteComponent implements OnInit {
   restaurantes = Array<Restaurante>();
 
-  constructor(public roteador: Router, private restauranteService: RestauranteService,){
+  constructor(public roteador: Router, private restauranteService: RestauranteService,private mensagemService: IMensagem){
   }
 
   ngOnInit() {
@@ -30,6 +31,7 @@ export class ListagemRestauranteComponent implements OnInit {
         const indx = this.restaurantes.findIndex(r => r.id === restaurante.id);
         if(indx > -1) {
           this.restaurantes.splice(indx, 1);
+          this.mensagemService.erro('Restaurante removido com sucesso!');
         }
       }
     )
