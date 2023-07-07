@@ -1,0 +1,36 @@
+<mat-toolbar>
+  <!--button mat-icon-button [mat-menu-trigger-for]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/CadastrarRestaurantes']">Cadastro</button>
+    <button mat-menu-item [routerLink]="['/ListarRestaurantes']">Lista</button>
+  </mat-menu-->
+  <h1> {{title}} </h1>
+  <!-- <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>assignment</mat-icon>
+        Cadastro
+      </ng-template>
+      [routerLink]="['/CadastrarRestaurantes']"
+    </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>dashboard</mat-icon>
+        Lista
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group> -->
+</mat-toolbar>
+<mat-sidenav-container style="height: 91.5%;">
+  <mat-sidenav #sidenav opened="true" mode="side">
+    <mat-nav-list>
+      <a class="side-lista" mat-list-item [routerLink]="['/ListarRestaurantes']"><mat-icon fontIcon="dashboard"></mat-icon><label class="side-label">    Lista</label></a>
+      <a mat-list-item [routerLink]="['/CadastrarRestaurantes']"><mat-icon fontIcon="edit"></mat-icon><label class="side-label">    Cadastro</label></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

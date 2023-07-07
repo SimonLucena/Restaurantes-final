@@ -1,0 +1,18 @@
+{
+  "restaurantes": [
+    {
+      "id": 1,
+      "nome": "teste",
+      "endereco": "",
+      "nota": 0,
+      "descricao": ""
+    },
+    {
+      "id": 2,
+      "nome": "",
+      "endereco": "",
+      "nota": 0,
+      "descricao": ""
+    }
+  ]
+}
